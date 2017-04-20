@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Author: </strong>
+  <%= @comment.author %>
+</p>
+
+<p>
+  <strong>Comment entry: </strong>
+  <%= @comment.comment_entry %>
+</p>
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>
+
+<div id="comments">
+	<%= render 'comments/form', comment: @comment %>
+</div>
+
+
+<% @post.comments.each do |comment| %>
+
+	<p> At <%=comment.created_at %>, <%= comment.author %>said...<br /> 
+		<%= comment.comment_entry %></p>
+		<% end %>
