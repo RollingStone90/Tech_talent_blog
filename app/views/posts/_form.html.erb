@@ -15,8 +15,8 @@
     <%= f.text_field :title, placeholder: "blog entry Title", class: "form-group" %>
   </div>
 
-  <div class="form-group">    
-    <%= f.text_field :author,placeholder: "Who's writing this?",class: "form-control" %>
+  <div class="form-group">
+    <%= f.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div class="form-group">

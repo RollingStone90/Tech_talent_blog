@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>Author:</strong>
-  <%= @post.author %>
+  <strong>User email</strong>
+  <%= @post.user.email %>
 </p>
 <p>
 	<strong>Created At:</strong>
@@ -29,7 +29,7 @@
 
 <% @post.comments.each do |comment| %>
 
-    <p><%= comment.author %></p>
+    <p><%= comment.user.username %> said...</p>
 
     <p><%= comment.comment_entry %></p>
 
