@@ -20,7 +20,7 @@
 
 <%= link_to 'Edit', edit_post_path(@post) ,class: "btn btn-primary" %> |
  <%= link_to 'Back', posts_path, class: "btn btn-primary" %>
-
+<%= image_tag current_user.avatar.thumb %>
 <div id="comments">
 
     <%= render 'comments/form', comment: @comment %>
@@ -28,9 +28,11 @@
 </div>
 
 <% @post.comments.each do |comment| %>
-
-    <p><%= comment.user.username %> said...</p>
+<div class="well">
+   
+    <p><%=comment.created_at.strftime("%A, %B %e at %I: %M%p")%> , <%= image_tag current_user.avatar.thumb %> said...</p>
 
     <p><%= comment.comment_entry %></p>
+  </div>
 
 <% end %>
